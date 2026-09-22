@@ -1,0 +1,174 @@
+import subprocess
+
+prompt_clean = """FORMAT: Single continuous 30-second one-take street UGC documentary sequence
+ASPECT RATIO: 9:16 vertical (social mobile native)
+FRAME RATE: 30fps, 180° rotary shutter (1/60s natural motion blur)
+SENSOR: iPhone 16 Pro Max 24mm ProRes Log handheld emulation | ISO 500 | 14-stop dynamic range
+COLOR GRADE: PAL-UGC-01 Raw Street Realism — 55% wet slate gray base, 25% muted navy and olive secondary, 15% burnt amber terrace accent, 5% overcast skylight highlight, natural skin tones, soft contrast, natural shadow toe roll-off
+
+LOCATION — ENV_ID [STREET_STADIUM_APPROACH]: Damp Victorian red-brick industrial alleyway leading to concrete stadium concourse plaza, 16:45 overcast late afternoon, cool 5200K diffused daylight. Wet asphalt pavement with reflective puddle patches and cast-iron manhole covers. Left boundary: weathered Victorian red-brick facade and dark green timber pub doorway. Right boundary: rusted corrugated steel perimeter and concrete lampposts. Background depth elements: concrete stadium grandstands and illuminated 60-meter floodlight pylons piercing the grey overcast sky. Strict Crowd Quota: Exactly 6 distant background supporters in dark coats walking toward turnstiles (0% static crowd, 0% morphing).
+LOCATION INVARIANCE LOCK: Architecture, damp brick textures, wet asphalt pavement reflections, and environmental light level remain strictly identical and continuous across all shots.
+
+GLOBAL CHARACTER LOCK — CALLUM: 29yo British terrace casual supporter, burly stocky robust build, 182cm, broad shoulders, weathered masculine jawline, short textured taper crop dark hair, subtle 2-day beard stubble, observant slate-blue eyes with specular catchlights, natural skin micro-pores and cold-air cheek flushing.
+OUTFIT: Deep navy technical micro-ripstop nylon windbreaker with stand-up storm collar, metallic front zip, dual zip chest utility pockets, layered over crisp olive-drab cotton pique polo shirt; relaxed straight-leg dark indigo raw selvedge denim trousers with single cuff break; vintage navy suede low-top terrace sneakers with off-white leather stripes and gum rubber soles.
+PROPS: Stainless steel sports chronograph watch on left wrist; silver signet ring on right pinky finger; box of matches in left jacket pocket.
+ENSEMBLE COMPANIONS: Accompanied by three stocky companions with orthogonal styling: Companion 2 in olive Harrington jacket and dark denim; Companion 3 in stone-grey hooded technical jacket; Companion 4 in charcoal rain jacket.
+CHARACTER INVARIANCE LOCK: Callum's facial contour, burly somatotype, dark taper haircut, and full wardrobe remain 100% immutable and identical across all cuts without morphing, costume shifts, or facial drift.
+FRAMING DIRECTIVE: Handheld mobile framing at chest and eye level; 180-degree spatial axis preserved; strictly zero gimbal stabilization or mechanical dolly tracks.
+
+LIGHTING: Key — Cool diffused overcast skylight at 5200K from high top-left. Fill — Soft ambient bounce off wet asphalt and red brick walls at 1:2.5 ratio. Rim — Subtle atmospheric separation along shoulders from stadium floodlight glow. Technique: Natural raw overcast daylight with realistic smartphone auto-exposure micro-adjustments.
+
+CAMERA RIG: Handheld smartphone camera rig with organic operator physics: 1.0x real-time Newtonian velocity, subtle 8-12Hz micro-shake, slight framing drift, organic 1-2 degree canted angle variance, and natural autofocus breathing. Strictly zero gimbal stabilization, zero tripod stability, zero cinematic dolly track movement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SHOT 1 [0.0s → 4.0s]
+Lens: 24mm f/2.2 | Focus: 1.5m
+FRAMING: Medium shot, handheld camera facing Callum leaning against red brick pub wall, watching street corner.
+CHARACTER LOCK: CALLUM (exact: burly build, navy technical windbreaker, olive polo, raw denim, suede gum-sole sneakers, steel watch on left wrist). Callum shifts weight between boots, checking his stainless steel wristwatch on left wrist, exhaling visible breath vapor into chilly air, observing empty cross-street.
+ENVIRONMENT LOCK: Damp brick alleyway exterior, wet pavement puddles reflecting overcast sky.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 4.0s | REFRAME]
+
+SHOT 2 [4.0s → 6.0s]
+Lens: 28mm f/2.2 | Focus: 1.2m
+FRAMING: Two-shot medium framing, handheld operator stepping backward as second burly companion enters frame right.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, raw denim). Callum steps forward from wall, clasping hands firmly in traditional terrace grip with incoming stocky friend in olive Harrington jacket, exchanging respectful head nods.
+ENVIRONMENT LOCK: Unbroken continuity outside pub corner, wet asphalt ground plane.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 6.0s | REFRAME]
+
+SHOT 3 [6.0s → 8.0s]
+Lens: 35mm f/2.0 | Focus: 1.0m
+FRAMING: Over-the-shoulder medium-close framing on third crew member stepping into group circle.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, dark taper hair). Third stocky companion in stone-grey hooded jacket strikes disposable flint lighter with sharp flick, cupping flame against wind to ignite cigarette, exhaling a puff of grey tobacco smoke past Callum's shoulder.
+ENVIRONMENT LOCK: Brick alleyway perimeter with damp wall textures.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 8.0s | REFRAME]
+
+SHOT 4 [8.0s → 10.0s]
+Lens: 24mm f/2.2 | Focus: 1.8m
+FRAMING: Group establishing wide-medium shot capturing the four burly companions assembled on street corner.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, raw denim, suede sneakers). The four stocky companions form a tight unit outside pub corner, pulling up high neck zips and adjusting jacket cuffs, unified collective readiness before setting off.
+ENVIRONMENT LOCK: Intersection of brick alleyway and wet street pavement.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 10.0s | REFRAME]
+
+SHOT 5 [10.0s → 12.0s]
+Lens: 24mm f/2.2 | Focus: 2.0m
+FRAMING: Low-angle tracking shot moving backward ahead of group as they walk shoulder-to-shoulder along wet tarmac.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, raw denim). Group strides with synchronized heavy cadence; Callum occupies center-left, hands thrust into jacket slash pockets, eyes locked forward toward distant stadium floodlights.
+ENVIRONMENT LOCK: Wet street tarmac stretching toward stadium approach, reflecting cool ambient light.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 12.0s | REFRAME]
+
+SHOT 6 [12.0s → 14.0s]
+Lens: 50mm f/1.8 | Focus: 0.8m
+FRAMING: Close-up tracking profile on Callum's technical jacket torso in motion.
+CHARACTER LOCK: CALLUM (identical: navy technical windbreaker, olive polo). Handheld camera tracks beside Callum's chest, capturing tactile micro-ripstop crinkle nylon fabric, heavy molded zipper teeth, and woven utility chest pocket seam details as fabric shifts with his gait.
+ENVIRONMENT LOCK: Moving background blur of brick architecture and lampposts.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 14.0s | REFRAME]
+
+SHOT 7 [14.0s → 16.0s]
+Lens: 35mm f/2.2 | Focus: 0.9m
+FRAMING: Low-angle ground-skimming tracking shot focusing down at marching footwear on wet asphalt.
+CHARACTER LOCK: CALLUM (identical: navy suede gum-sole sneakers, single-cuff raw denim). Callum's navy suede gum-sole trainers step firmly across asphalt edge and splash through shallow puddle water, followed closely by companions' leather terrace boots.
+ENVIRONMENT LOCK: Wet ground plane with curbstone and puddle splashes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 16.0s | REFRAME]
+
+SHOT 8 [16.0s → 18.0s]
+Lens: 24mm f/2.2 | Focus: 2.2m
+FRAMING: Medium frontal group tracking shot at eye level, operator walking backward at steady speed.
+CHARACTER LOCK: CALLUM (identical: burly posture, navy windbreaker, olive polo, raw denim). The four men walk abreast in purposeful march, burly broad shoulders filling the vertical 9:16 mobile frame, breath mist forming in cool air.
+ENVIRONMENT LOCK: Stadium boulevard corridor with red-brick buildings receding into background.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 18.0s | REFRAME]
+
+SHOT 9 [18.0s → 20.0s]
+Lens: 50mm f/1.8 | Focus: 0.7m
+FRAMING: Tight detail close-up on jacket collar fastening.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, silver signet ring on right pinky). Callum raises his right hand, gripped with silver signet ring, grasping metal zipper puller and fastening storm collar all the way up to chin level, fabric stretching taut across muscular neck.
+ENVIRONMENT LOCK: Cool overcast ambient background.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 20.0s | REFRAME]
+
+SHOT 10 [20.0s → 22.0s]
+Lens: 35mm f/2.0 | Focus: 1.4m
+FRAMING: Over-the-shoulder rear tracking shot following behind Callum's back.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker back yoke, raw denim, dark taper haircut). Camera captures ergonomic storm-flap back construction of navy jacket, structured taper cut of raw denim, and relaxed rolling gait of a seasoned matchday regular.
+ENVIRONMENT LOCK: Wet street leading forward toward stadium gates.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 22.0s | REFRAME]
+
+SHOT 11 [22.0s → 24.0s]
+Lens: 24mm f/2.2 | Focus: 3.0m
+FRAMING: Wide dynamic tracking shot as group turns corner into stadium approach boulevard.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, raw denim). Massive concrete stadium grandstand and luminous 60-meter floodlight towers emerge into view, casting soft high-angle spill across wet tarmac.
+ENVIRONMENT LOCK: Grand stadium facade with illuminated floodlights piercing twilight sky.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 24.0s | REFRAME]
+
+SHOT 12 [24.0s → 25.5s]
+Lens: 40mm f/2.0 | Focus: 1.1m
+FRAMING: Medium-close side profile tracking shot showcasing inner layered garment.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker unzipped two inches showing olive polo collar, 2-day beard stubble). Side angle highlights crisp ribbed collar of olive cotton polo snug beneath windbreaker neck, jawline firm and determined.
+ENVIRONMENT LOCK: Stadium plaza exterior lighting.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 25.5s | REFRAME]
+
+SHOT 13 [25.5s → 27.0s]
+Lens: 24mm f/2.2 | Focus: 2.5m
+FRAMING: Handheld follow shot behind group navigating through yellow crowd-control steel crash barriers.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, raw denim, suede sneakers). Callum guides his path past steel barricade, companions falling into single-file entry formation outside turnstile plaza.
+ENVIRONMENT LOCK: Steel crowd barriers on concrete stadium forecourt.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 27.0s | REFRAME]
+
+SHOT 14 [27.0s → 28.5s]
+Lens: 28mm f/2.2 | Focus: 1.2m
+FRAMING: Over-the-shoulder close follow shot tracking Callum reaching the turnstile gate.
+CHARACTER LOCK: CALLUM (identical: navy windbreaker, signet ring on right hand). Callum extends right hand to push revolving steel bar of mechanical stadium turnstile, stepping into narrow concrete concourse portal.
+ENVIRONMENT LOCK: Heavy mechanical iron turnstiles at stadium entrance threshold.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[HARD CUT: 28.5s | REFRAME]
+
+SHOT 15 [28.5s → 30.0s]
+Lens: 24mm f/2.2 | Focus: 2.0m
+FRAMING: Medium follow shot from rear-quarter inside dark concourse archway, revealing emerald green illuminated pitch ahead.
+CHARACTER LOCK: CALLUM (identical: navy technical windbreaker, raw denim, suede sneakers). Callum pushes through turnstile exit into shadowed tunnel, footsteps ringing out, gazing toward bright green grass and roaring matchday arena; settle stance locked from 29.2s to 30.0s, holding stance while looking forward into stadium bowl as final visual hold.
+ENVIRONMENT LOCK: Dark concrete stadium tunnel framing the brightly floodlit green pitch.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AUDIO: 100% diegetic street and matchday acoustic landscape without voiceover or non-diegetic music bed.
+Volume Hierarchy: Environmental matchday ambience at 0dB reference, foley transient peaks at -2dB to 0dB.
+Foley layers:
+[1] Heavy synchronized rubber-sole footwear scuffs and wet asphalt splashes across pavement.
+[2] Crisp synthetic friction and technical crinkle-nylon rustle of windbreakers during brisk walking.
+[3] Mechanical metallic click of disposable lighter spark and metal zipper puller slide.
+[4] Metallic clanking and ratchet rotation sound of heavy steel turnstile barrier bars at 27.5s-28.5s.
+[5] Distant reverberant stadium terrace singing, sub-bass terrace drums, and low crowd roar echoing between brick facades (RT60 1.2s wet outdoor street decay transitioning to RT60 0.6s concrete concourse).
+Acoustics: Raw mobile microphone capture with 80Hz high-pass filter, natural wind-muff flutter, and authentic ambient street stereo separation.
+"""
+
+with open("scratch/test_clean_m24.txt", "w", encoding="utf-8") as f:
+    f.write(prompt_clean)
+
+res = subprocess.run(["python", "prompt_auditor.py", "scratch/test_clean_m24.txt", "--duration", "30", "--mode", "3", "--json"], capture_output=True, text=True, encoding="utf-8")
+print(res.stdout)

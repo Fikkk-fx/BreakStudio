@@ -1,0 +1,43 @@
+FORMAT: Single continuous 15-second 360-degree orbital UGC fashion sequence
+ASPECT RATIO: 16:9 widescreen
+FRAME RATE: 24fps, 180° rotary shutter (1/48s natural motion blur)
+SENSOR: ARRI Alexa 35 CineAlta 8K sensor emulation | ISO 800 | 17-stop dynamic range | ARRI LogC4 color science
+COLOR GRADE: PAL-ACTM-01 High-Fashion Minimalist Monolith — 55% raw concrete and matte obsidian base, 25% stark alabaster architectural secondary, 15% chromatic cobalt and brushed titanium accent, 5% specular highlight roll-off, natural healthy skin tones, crisp micro-contrast, organic shadow toe roll-off
+
+LOCATION — ENV_ID [ENV-AVANT-RUNWAY-01]: Minimalist brutalist exhibition pavilion, interior gallery with controlled 5600K high-key architectural illumination. Floor: seamless dark graphite micro-cement with concentric circular polished reflection tracks. Left boundary: fluted concrete monolith partitions. Right boundary: towering brushed titanium acoustic baffles. Background depth elements: stark architectural voids dynamically shifting behind the circular orbit between brutalist stone arches, crisp matte white curved cycloramas, and obsidian exhibition galleries in sync with each full 360-degree rotation. Strict Crowd Quota: Exactly 0 background pedestrians (0% background crowd, 100% pure focused solo editorial space).
+
+GLOBAL CHARACTER LOCK — ELENA: 27-year-old Eurasian woman of mixed East Asian and French heritage, statuesque 178cm runway proportions, sculpted cheekbones, defined jawline, authentic dermis texture with visible micro-pores, neutral specular catchlights in dark hazel eyes, dark espresso hair styled back into an architectural low chignon with sculptural precision.
+OUTFIT: Avant-Garde Abstract Architectural Collection: A sequence of 30 conservative, structural haute couture abstract ensembles transforming seamlessly around her form as the camera orbits. Initial look features an asymmetrical high-collar structured slate-grey wool tunic with origami-folded accordion shoulders, paired with tailored wide-leg pleat trousers and sculptural square-toe leather boots. Outfits fluidly cycle through 30 non-sexualized geometric silhouettes including biomimetic faceted capelets, parametric pleated cocoon coats, deconstructed monochromatic neoprene dusters, sculptural woven metallic mesh tunics, and layered geometric architectural silk gowns with complete neck-to-ankle modesty.
+PROPS: Sculptural matte silver cuff bracelet fastened to right wrist; minimal geometric brushed titanium ring on left index finger.
+FRAMING DIRECTIVE: Medium-Full Cowboy shot to Full-Body Runway framing, keeping Elena centered within the 16:9 frame while the camera completes continuous 360-degree orbits.
+
+LIGHTING: Key — Large overhead 5600K diffused softbox grid creating even, sculptural highlight wraps across garments and cheekbones. Fill — Neutral ambient studio bounce at 1:2 ratio preserving textile texture depth. Rim — 6000K crisp cool edge lights outlining geometric silhouettes and architectural folds. Technique: High-concept editorial studio lighting with 180-degree spatial axis preservation.
+
+CAMERA RIG: Precision 360-degree circular orbit robotic track rig maintaining constant 1.0x real-time Newtonian velocity, executing continuous circular revolutions around Elena at steady eye-level height with smooth rotational momentum.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SHOT 1 [0.0s → 14.2s]
+Lens: 35mm Zeiss Supreme Prime | Spherical | f/2.8 | Focus: 2.2m continuous subject tracking.
+FRAMING: Medium-Full shot (Cowboy framing), camera positioned at 2.2 meters distance, revolving smoothly in an unbroken 360-degree circular orbit around Elena.
+CHARACTER LOCK: ELENA (exact: 27yo Eurasian woman, low architectural chignon, sculptural silver cuff on right wrist, titanium ring on left index finger, avant-garde abstract garments).
+
+At 0.0s [35mm Prime] frames Elena facing forward in initial asymmetrical origami-pleated slate-grey tunic, hands posed in measured high-fashion poise at waist level. Camera tracks in continuous 1.0x real-time Newtonian velocity orbit. Facial biomechanics lock with AU1+AU2 slight brow elevation and AU6 subtle eye crinkle, maintaining calm statuesque intensity.
+At 3.0s: As the robotic rig sweeps past the 90-degree lateral profile, the garment seamlessly transforms into a parametric ivory cocoon coat with sculptural geometric lapels, while the background wall shifts into fluted stone pillars. Elena turns her chin in rhythm with the camera.
+At 6.0s: Reaching the 180-degree rear perspective, the outfit metamorphoses into a structured obsidian neoprene jacket with sharp faceted shoulder wings and pleated split tails, as the background evolves into a cavernous dark architectural void.
+At 9.0s: Orbiting past 270 degrees, the ensemble shifts into an iridescent cobalt and brushed titanium architectural column dress with high structured collar, as light catches the metallic weave and the backdrop transitions into a stark white curved cyclorama.
+At 12.0s: Completing the orbital cycle back toward the frontal axis, the garment transitions through rapid kaleidoscopic succession into a final sculptural charcoal deconstructed trench gown with architectural box pleats. Elena executes a subtle posture shift, anchoring weight evenly on polished floor.
+From 14.2s to 15.0s: Elena settles into a poised editorial stance, chin slightly raised, shoulders squared, eyes locked steady with the lens as the camera holds its final frame.
+
+[CLIP END — 14.2s | Final 0.8-second stationary settle hold through 15.0s]
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AUDIO: 100% diegetic studio ambience bed | Native Music: Minimalist Avant-Garde Haute Couture Electronic with rhythmic deep bass pulses and clean synthesizer modulations (0dB reference / -14 LUFS standard single-layer music playback).
+Foley layers:
+[1] Firm leather boot pivot and sole friction on polished micro-cement floor
+[2] Crisp structural textile rustle, heavy wool swish, and origami fabric shifting
+[3] Studio gallery room tone with low air-circulation hum, sub-bass rumble filtered by high-pass at 80Hz
+[4] Subtle metallic resonance of titanium cuff bracelet during hand micro-movements
+[5] Natural room acoustic reflections and spatial reverb with RT60 decay of 0.45s.
+Acoustics: RT60 decay 0.45s across concrete studio interior; pristine transient clarity with high-pass filter at 80Hz; natural acoustic atmosphere preserved without vocal ducking.

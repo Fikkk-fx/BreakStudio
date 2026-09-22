@@ -1,0 +1,47 @@
+**[PROSE]:**
+At 0.0s [Shot 1: 24mm f/2.2 | Hook | Focus: 1.5m], inside wet industrial alleyway outside a red-brick pub, Callum stands leaning against the wall, observing the empty street corner. Callum shifts his boots on the damp tarmac and checks the steel sports watch on his left wrist, exhaling visible breath vapor into the 5200K overcast air while waiting for his crew.
+[HARD CUT: 4.0s | 28mm f/2.2]
+At 4.0s [Shot 2: Established | Focus: 1.2m], handheld camera steps backward as a second burly mate in an olive Harrington jacket arrives. Callum steps off the wall; the two men clasp hands in a firm terrace grip and exchange respectful head nods.
+[HARD CUT: 6.0s | 35mm f/2.0]
+At 6.0s [Shot 3: Established | Focus: 1.0m], a third stocky companion in a stone-grey jacket steps into the circle, flicking a disposable lighter with a sharp mechanical click to ignite a cigarette, exhaling grey tobacco smoke past Callum's shoulder.
+[HARD CUT: 8.0s | 24mm f/2.2]
+At 8.0s [Shot 4: Established | Focus: 1.8m], the four burly companions assemble outside the pub corner, pulling up high neck zips and adjusting jacket cuffs in unified collective readiness.
+[HARD CUT: 10.0s | 24mm f/2.2]
+At 10.0s [Shot 5: Complication/Demo | Focus: 2.0m], low-angle tracking ahead of the group as they stride forward four-abreast with synchronized heavy cadence along wet asphalt towards distant stadium floodlights; Callum walks center-left with hands thrust in jacket pockets.
+[HARD CUT: 12.0s | 50mm f/1.8]
+At 12.0s [Shot 6: Outfit Focus | Focus: 0.8m], handheld camera tracks closely beside Callum's torso, highlighting the deep navy technical micro-ripstop nylon windbreaker, heavy zipper teeth, and utility chest pockets flexing in motion.
+[HARD CUT: 14.0s | 35mm f/2.2]
+At 14.0s [Shot 7: Outfit Focus | Focus: 0.9m], low-angle ground tracking captures Callum's navy suede gum-sole terrace sneakers stepping over wet curbstone and splashing through shallow pavement puddles in rhythm.
+[HARD CUT: 16.0s | 24mm f/2.2]
+At 16.0s [Shot 8: Outfit Focus | Focus: 2.2m], eye-level frontal tracking captures the four burly men walking in unison, broad shoulders and weather-proof terrace jackets dominating the vertical 9:16 frame.
+[HARD CUT: 18.0s | 50mm f/1.8]
+At 18.0s [Shot 9: Outfit Focus | Focus: 0.7m], tight close-up shows Callum's right hand with silver signet ring grasping the metal zip puller, fastening the storm collar up to chin level against the wind.
+[HARD CUT: 20.0s | 35mm f/2.0]
+At 20.0s [Shot 10: Outfit Focus | Focus: 1.4m], rear over-the-shoulder tracking follows Callum's jacket back-yoke ventilation flap and relaxed-cut raw dark selvedge denim trousers moving with natural rolling stride.
+[HARD CUT: 22.0s | 24mm f/2.2]
+At 22.0s [Shot 11: Complication/Demo | Focus: 3.0m], the group rounds a brick corner onto the stadium boulevard; towering concrete arena ramparts and glowing 60-meter floodlights loom ahead across wet tarmac.
+[HARD CUT: 24.0s | 40mm f/2.0]
+At 24.0s [Shot 12: Outfit Focus | Focus: 1.1m], medium-close tracking from side angle reveals the crisp ribbed collar of Callum's olive cotton pique polo layered beneath his windbreaker collar.
+[HARD CUT: 25.5s | 24mm f/2.2]
+At 25.5s [Shot 13: Complication/Demo | Focus: 2.5m], group navigates past yellow steel crowd-control barricades, falling into purposeful single file outside the stadium turnstiles.
+[HARD CUT: 27.0s | 28mm f/2.2]
+At 27.0s [Shot 14: Close | Focus: 1.2m], tight follow shot behind Callum as he reaches the heavy turnstile gate, extending his right hand to push the revolving steel bar.
+[HARD CUT: 28.5s | 24mm f/2.2]
+At 28.5s [Shot 15: Close | Focus: 2.0m], Callum pushes through the turnstile into the shadowed concrete concourse tunnel; bright floodlit emerald green pitch emerges in the distance; settle stance locked from 29.2s to 30.0s, holding stance while looking forward into the stadium bowl.
+
+**[GLOBAL LOCK]:**
+- Subject Identity: Callum, 29yo British terrace casual supporter, burly stocky robust build, 182cm, broad shoulders, weathered jaw, short textured dark taper crop, subtle beard stubble, observant blue eyes with specular catchlights, natural skin micro-pores. Accompanied by three stocky mates in contrasting Harrington and hooded terrace jackets.
+- Wardrobe & Textures: Deep navy technical micro-ripstop nylon windbreaker with high storm collar and metallic front zip, layered over crisp olive cotton pique polo shirt; relaxed straight-leg dark indigo raw selvedge denim; vintage navy suede low-top terrace sneakers with gum rubber soles.
+- Props: Stainless steel sports chronograph watch on left wrist; silver signet ring on right pinky; disposable lighter.
+- Location: Damp Victorian red-brick industrial alleyway transitioning to concrete stadium plaza concourse; wet asphalt pavement with puddle reflections; distant towering stadium floodlight pylons piercing overcast late afternoon sky. Exactly 6 distant background supporters walking toward turnstiles.
+
+**[RENDER & ACTING LOCK]:**
+- Visual DNA & Palette: PAL-UGC-01 Raw Street Realism, 9:16 vertical mobile video, 30fps with 180° shutter. Muted slate grey and wet asphalt tones accented by navy, olive, and warm amber pub reflections.
+- Biological Acting: Somatic authenticity, tense focused facial composure, jaw clenched against cold wind, eye saccades tracking companions, natural breath vapor condensation, zero theatrical smiles.
+- Lighting: Cool 5200K diffused overcast daylight key from high-left; soft ambient fill bounce from wet pavement; subtle top rim separation from stadium floodlights.
+- Diegetic Audio: 100% diegetic street soundscape without voiceover or non-diegetic music. Heavy synchronized rubber-sole footwear scuffs, puddles splashes, windbreaker crinkle-nylon fabric friction, metallic lighter spark, turnstile ratchet rotation, and distant reverberant terrace chants echoing between brick walls (RT60 1.2s decaying to RT60 0.6s). 80Hz high-pass filter on mobile microphone capture.
+
+**[CAMERA & PHYSICS LOCK]:**
+- Optics Suite: Dynamic mobile progression utilizing 24mm f/2.2 wide, 28mm f/2.2, 35mm f/2.0, 40mm f/2.0, and 50mm f/1.8 detail focal lengths.
+- Camera Rig: Handheld smartphone camera rig with organic operator physics, subtle 8-12Hz micro-shake, slight framing drift, and natural autofocus breathing. Strictly zero gimbal stabilization, zero tripod stability, zero cinematic dolly track movement.
+- Physics & Motion: 1.0x real-time Newtonian velocity, grounded human walking momentum, natural fabric inertia, and instantaneous gravity on water droplets.
