@@ -56,3 +56,11 @@ Thumbs.db
 *.log
 .vscode/
 .idea/
+
+# Build info
+tsconfig.tsbuildinfo
+frontend/tsconfig.tsbuildinfo
+
+# Scripts temp
+cleanup_git.bat
+
