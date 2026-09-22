@@ -1,5 +1,6 @@
-from pydantic import BaseModel, model_validator
-from typing import Optional, List, Dict, Any
+from pydantic import BaseModel, field_validator
+from typing import Optional, List, Dict, Any, Union
+import json
 
 class ImageGenerateRequest(BaseModel):
     model: Optional[str] = None
@@ -60,14 +61,23 @@ class VideoEditRequest(BaseModel):
     save_audio: Optional[bool] = None
     prompt_upsampling: Optional[bool] = None
 
+def _parse_json_field(v: Any) -> Any:
+    """Parse a field that may be a JSON string into a dict/list."""
+    if isinstance(v, str):
+        try:
+            return json.loads(v)
+        except (json.JSONDecodeError, ValueError):
+            return v
+    return v
+
 class JobResponse(BaseModel):
     id: str
     type: str
     model: str
     prompt: str
     status: str
-    params: Optional[str] = None
-    input_files: Optional[str] = None
+    params: Optional[Any] = None
+    input_files: Optional[Any] = None
     prediction_id: Optional[str] = None
     output_url: Optional[str] = None
     output_path: Optional[str] = None
@@ -75,6 +85,11 @@ class JobResponse(BaseModel):
     created_at: str
     updated_at: str
     elapsed_seconds: Optional[float] = None
+
+    @field_validator('params', 'input_files', mode='before')
+    @classmethod
+    def parse_json_strings(cls, v):
+        return _parse_json_field(v)
 
 class JobListResponse(BaseModel):
     jobs: List[JobResponse]

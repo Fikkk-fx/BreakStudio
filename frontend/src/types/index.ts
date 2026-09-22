@@ -3,9 +3,10 @@ export interface Job {
   type: 'image' | 'video' | 'edit-video';
   model: string;
   prompt: string;
-  status: 'pending' | 'processing' | 'succeeded' | 'failed';
-  params: Record<string, any>;
-  input_files: Record<string, string>;
+  status: 'pending' | 'processing' | 'succeeded' | 'failed' | 'deleted';
+  // params & input_files may arrive as parsed object or raw JSON string
+  params: Record<string, any> | string | null;
+  input_files: Record<string, string> | string | null;
   prediction_id: string | null;
   output_url: string | null;
   output_path: string | null;
@@ -23,6 +24,8 @@ export interface GalleryItem {
   thumbnail_url?: string;
   prompt: string;
   model: string;
+  output_path?: string | null;
+  elapsed_seconds?: number | null;
   created_at: string;
 }
 
@@ -61,4 +64,17 @@ export interface VideoEditRequest {
   prompt: string;
   draft?: boolean;
   seed?: number;
+}
+
+// Helper to safely parse params/input_files which may be JSON string or object
+export function parseJobField<T>(field: T | string | null | undefined): T | null {
+  if (field === null || field === undefined) return null;
+  if (typeof field === 'string') {
+    try {
+      return JSON.parse(field) as T;
+    } catch {
+      return null;
+    }
+  }
+  return field as T;
 }

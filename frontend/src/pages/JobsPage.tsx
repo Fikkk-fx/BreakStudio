@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getJobs, deleteJob } from '../api/client';
-import { Job } from '../types';
+import { Job, parseJobField } from '../types';
 import { formatDistanceToNow } from 'date-fns';
 import { Trash2, ChevronDown, ChevronUp, RefreshCw } from 'lucide-react';
 import JobStatusCard from '../components/JobStatusCard';
+
 
 export default function JobsPage() {
   const [jobs, setJobs] = useState<Job[]>([]);
@@ -65,7 +66,7 @@ export default function JobsPage() {
     <div className="max-w-6xl mx-auto flex flex-col gap-6 pb-10">
       <header className="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
         <div>
-          <h1 className="text-3xl font-bold">📋 Jobs History</h1>
+          <h1 className="text-3xl font-bold">ðŸ“‹ Jobs History</h1>
           <p className="text-zinc-400 mt-2">Track your generation tasks and background processing.</p>
         </div>
         <div className="flex flex-wrap gap-3">

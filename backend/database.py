@@ -53,17 +53,29 @@ async def get_job(job_id: str) -> dict:
             return None
 
 async def list_jobs(type_filter: str = None, status_filter: str = None, limit: int = 20, offset: int = 0) -> list:
-    query = "SELECT * FROM jobs WHERE 1=1"
+    """
+    List jobs with optional filters.
+    status_filter supports comma-separated values e.g. 'pending,processing'.
+    Deleted jobs are excluded by default.
+    """
+    query = "SELECT * FROM jobs WHERE status != 'deleted'"
     params = []
+
     if type_filter:
         query += " AND type = ?"
         params.append(type_filter)
+
     if status_filter:
-        query += " AND status = ?"
-        params.append(status_filter)
+        # Support CSV status filter: 'pending,processing' → IN (?, ?)
+        statuses = [s.strip() for s in status_filter.split(',') if s.strip()]
+        if statuses:
+            placeholders = ','.join(['?'] * len(statuses))
+            query += f" AND status IN ({placeholders})"
+            params.extend(statuses)
+
     query += " ORDER BY created_at DESC LIMIT ? OFFSET ?"
     params.extend([limit, offset])
-    
+
     async with get_db() as db:
         async with db.execute(query, params) as cursor:
             rows = await cursor.fetchall()
@@ -75,7 +87,6 @@ async def update_job(job_id: str, updates: dict) -> dict:
         set_clauses = [f"{k} = ?" for k in updates.keys()]
         values = list(updates.values())
         values.append(job_id)
-        
         await db.execute(f"UPDATE jobs SET {', '.join(set_clauses)} WHERE id = ?", values)
         await db.commit()
     return await get_job(job_id)
@@ -93,22 +104,27 @@ async def get_gallery(type_filter: str = None, limit: int = 20, offset: int = 0)
         params.append(type_filter)
     query += " ORDER BY created_at DESC LIMIT ? OFFSET ?"
     params.extend([limit, offset])
-    
+
     async with get_db() as db:
         async with db.execute(query, params) as cursor:
             rows = await cursor.fetchall()
             return [dict(row) for row in rows]
 
 async def count_jobs(type_filter: str = None, status_filter: str = None) -> int:
-    query = "SELECT COUNT(*) FROM jobs WHERE 1=1"
+    query = "SELECT COUNT(*) FROM jobs WHERE status != 'deleted'"
     params = []
+
     if type_filter:
         query += " AND type = ?"
         params.append(type_filter)
+
     if status_filter:
-        query += " AND status = ?"
-        params.append(status_filter)
-    
+        statuses = [s.strip() for s in status_filter.split(',') if s.strip()]
+        if statuses:
+            placeholders = ','.join(['?'] * len(statuses))
+            query += f" AND status IN ({placeholders})"
+            params.extend(statuses)
+
     async with get_db() as db:
         async with db.execute(query, params) as cursor:
             row = await cursor.fetchone()

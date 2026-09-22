@@ -1,8 +1,13 @@
 import axios from 'axios';
 import { Job, GalleryItem } from '../types';
 
+// Support runtime API base URL for production backend
+// Set VITE_API_BASE_URL env var to point to your deployed backend
+// e.g. VITE_API_BASE_URL=https://your-backend.railway.app
+const API_BASE = import.meta.env.VITE_API_BASE_URL || '';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API_BASE}/api`,
 });
 
 export const generateImage = async (data: any, imageFile?: File): Promise<Job> => {
@@ -34,10 +39,11 @@ export const editVideo = async (data: any, videoFile: File, imageFiles?: File[])
   return response.data;
 };
 
+// FIX BUG 2: endpoint was '/upload', correct path is '/generate/upload'
 export const uploadFile = async (file: File): Promise<{ url: string }> => {
   const formData = new FormData();
   formData.append('file', file);
-  const response = await api.post<{ url: string }>('/upload', formData);
+  const response = await api.post<{ url: string }>('/generate/upload', formData);
   return response.data;
 };
 
@@ -61,7 +67,7 @@ export const getGallery = async (params?: any): Promise<{ data: GalleryItem[], t
 };
 
 export const downloadGalleryItem = (id: string): void => {
-  window.open(`/api/gallery/${id}/download`, '_blank');
+  window.open(`${API_BASE}/api/gallery/${id}/download`, '_blank');
 };
 
 export const deleteGalleryItem = async (id: string): Promise<void> => {
