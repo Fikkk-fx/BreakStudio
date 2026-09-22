@@ -1,100 +1,167 @@
-# 📱 Director O.S. V20.5 — Raw UGC & Social Mobile Studio Edition (Pruna AI Integrated)
+# 📱 BreakStudio — Raw UGC & Social Mobile Studio
 
-Standalone Directorial AI Agent Skill specialized for **Hyper-Realistic Biological Raw UGC, TikTok/Reels/Shorts, Street Interviews, Bystander Viral Formats, Social Commerce, and Smartphone CMOS Physics**, natively powered by **Pruna AI** Image & Video Engines.
-
----
-
-## ⚡ Pruna AI Direct Integration
-
-Sistem ini terintegrasi penuh dengan **Pruna AI REST API** (`https://api.pruna.ai/v1`) untuk eksekusi langsung aset pra-produksi dan rendering video mobile native 9:16:
-
-### 🌟 Model yang Didukung:
-1. **`p-image-ideogram`** (Turn 4a): Generasi aset gambar dengan rendering teks & tipografi tajam, level *thinking* terkalibrasi, aspek rasio 9:16 & 1:1, resolusi 1K/2K.
-2. **`flux-dev`** (Turn 4a): Generasi gambar fotorealistik berbasis Flux.1-dev dengan mode *speed optimization* (`Juiced 🔥`, `Extra Juiced 🔥`).
-3. **`flux-dev-lora`** (Turn 4a): Generasi gambar dengan integrasi kustom HuggingFace LoRA untuk konsistensi karakter / *brand style lock*.
-4. **`p-video-2-pro`** (Turn 6): Flagship AI video generation dengan first/last-frame conditioning, audio tersinkronisasi bawaan, resolusi 480p/768p (24fps), dan mode `speed`/`quality`/`cost`.
-5. **`p-video-2`** (Turn 6): Generasi video fleksibel berdurasi 1–20 detik, resolusi 720p/1080p (24/48fps), dan input pengkondisian audio eksternal.
-6. **`p-video-edit`** (Turn 6): Video-to-video editing hingga 15 detik dipandu prompt teks dan s/d 4 gambar referensi.
+Full-stack AI-powered video production studio for **Hyper-Realistic Raw UGC, TikTok/Reels/Shorts, Street Interviews, and Social Commerce**, integrated with **[Pruna AI](https://pruna.ai)** image & video generation engines.
 
 ---
 
-## 📁 Struktur Repository
+## 🗂️ Struktur Project
 
-- **`pruna_client.py`**: Client & CLI Python berstandar *production* (zero external dependencies) untuk upload file otomatis, pembuatan prediksi, polling status asinkron, dan download output.
-- **`.env` / `.env.example`**: Konfigurasi kunci API (`PRUNA_AI_API_KEY`).
-- **`SKILL.md`**: Master entrypoint skill dengan spesifikasi lengkap:
-  - **The 18 Ironclad Production Mandates V20.5 (UGC Edition)** (Jendela timestamp dialog & 0.8s tail-buffer, dynamic reframes, kuota kerumunan eksak, skoring diegetik -4dB ducking, batas kata WPS, 10 pilar komposisi mobile 9:16, dsb.)
-  - **6-Step Interactive Production Flow (Turn 1–6)** & Header Navigasi Anti-Lupa
-  - **UGC Mobile Directorial Engines & Smartphone Optics Codex** (iPhone 16 Pro Max ProRes Log, Galaxy S24 Ultra, Pixel 9 Pro; panjang fokal 13mm–120mm; micro-shake 8–12Hz; greasy lens halation; auto-exposure/autofocus breathing)
-  - **Biological Raw UGC Studio** (The Anti-Influencer Golden Rule, The 7 Pillars of Raw UGC, 4-Cut Bystander Progression, 80/20 Selfie Screen-Look Drift, Somatic Fidgeting, Unscripted Speech Repairs)
-  - **Universal 6-Layer Locked Prompt Architecture (SSOT - Module 24)**
-  - **Master UGC Color Palette & Grading Library (`PAL-UGC`, `PAL-COM`, `PAL-STR`)**
-  - **Master Natural Lighting Composition Codex (Module 26)** (6-Phase Solar Cycle, Ambient Light Physics, Portrait Patterns)
-  - **Master Visual Techniques & Optical Effects Codex (Module 27)** (46 Master Techniques: Fast Motion, Collage, Duplication, Zoetrope, Motion Blur, Speed Ramp, Fixed Cam, Timelapse, Step-Printing, Flash Cut, Wipe Transition, Quick Cut, Strobe, Stutter, Point Cloud, Glitch, Seamless Transition, Cut-ins, Fourth Wall, Color Shift, Bullet Time, Super Zoom, Match Motion, Zoom In/Low Frame Rate, Jump Cut, etc. — Strictly 0% SFX)
-  - **Master Directorial Pruna AI Codex (Module 28)** (`rules/28_pruna_ai_model_and_dispatch_codex.md`)
-  - **4-Panel Raw Character Sheet Generator (Asset Lock)** & Master Negative Prompt Hardware Lock
-  - **Inline Generation Protocols** (Turn 4a Image via Pruna `p-image-ideogram`/`flux-dev`, Turn 6 Video via Pruna `p-video-2-pro`/`p-video-2`)
-- **`prompt_auditor.py`**: Skrip standalone Python untuk audit pra-generasi, kalkulator densitas karakter/kata, dan verifikasi zero-defect prompt UGC.
-- **`rules/`**: Kumpulan 47 modul dan codex teknis lengkap (file Markdown) yang mencakup seluruh pipeline pra-produksi hingga eksekusi prompt AI video.
+```
+BreakStudio/
+├── backend/                    # FastAPI server
+│   ├── routes/                 # API endpoints (generate, jobs, gallery, ws)
+│   ├── prompts/                # Prompt templates
+│   ├── rules/                  # Production codex & rules (48 modules)
+│   ├── outputs/                # Generated media output
+│   ├── uploads/                # Uploaded assets
+│   ├── pruna_client.py         # Pruna AI REST client (zero dependencies)
+│   ├── prompt_auditor.py       # Pre-generation prompt linter & auditor
+│   ├── skill_rules_reader.py   # Rules parser & extractor
+│   ├── test_suite.py           # Integration test suite
+│   ├── main.py                 # FastAPI app entrypoint
+│   ├── config.py               # App configuration
+│   ├── database.py             # SQLite database setup
+│   ├── pruna_service.py        # Pruna AI service layer
+│   ├── schemas.py              # Pydantic request/response schemas
+│   └── requirements.txt        # Python dependencies
+├── frontend/                   # React + Vite + TypeScript
+│   ├── src/
+│   │   ├── api/                # API client
+│   │   ├── components/         # UI components
+│   │   ├── pages/              # Page views
+│   │   ├── stores/             # Zustand state
+│   │   └── types/              # TypeScript types
+│   ├── public/assets/          # Static assets
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.ts
+├── .env.example                # Template environment variables
+├── .gitignore
+├── vercel.json                 # Vercel deployment config
+├── run_backend.bat             # Start backend (Windows)
+├── run_frontend.bat            # Start frontend (Windows)
+└── start_studio.bat            # Start both (Windows)
+```
 
 ---
 
-## 🚀 Cara Penggunaan & CLI Dispatch
+## ⚙️ Setup & Instalasi
 
-### 1. Konfigurasi Kunci API:
-Pastikan file `.env` berisi:
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- [Pruna AI API Key](https://pruna.ai)
+
+### 1. Clone Repository
+```bash
+git clone https://github.com/Fikkk-fx/BreakStudio.git
+cd BreakStudio
+```
+
+### 2. Konfigurasi Environment
+```bash
+cp .env.example .env
+```
+Buka `.env` dan isi nilai berikut:
 ```env
-PRUNA_AI_API_KEY=pru_IwuwIn1Gce5Axm70zp4wfGbx8sssd2Vs
+PRUNA_AI_API_KEY=your_pruna_api_key_here
+```
+> ⚠️ **Jangan pernah commit file `.env`!** File ini sudah masuk `.gitignore`.
+
+### 3. Install Backend
+```bash
+cd backend
+pip install -r requirements.txt
 ```
 
-### 2. Generasi Gambar (Turn 4a):
+### 4. Install Frontend
 ```bash
-# Menggunakan p-image-ideogram (Typographic & CharSheet):
-python pruna_client.py image \
+cd frontend
+npm install
+```
+
+---
+
+## 🚀 Menjalankan Aplikasi
+
+### Cara Cepat (Windows)
+Double-click **`start_studio.bat`** — akan membuka backend & frontend sekaligus.
+
+### Manual
+```bash
+# Terminal 1 — Backend (dari root project)
+python -m uvicorn backend.main:app --host 127.0.0.1 --port 8000 --reload
+
+# Terminal 2 — Frontend
+cd frontend
+npm run dev
+```
+
+Buka browser: **http://localhost:5173**
+- API Docs: **http://localhost:8000/docs**
+
+---
+
+## 🤖 Pruna AI Models
+
+| Model | Kegunaan | Output |
+|---|---|---|
+| `p-image-ideogram` | Gambar dengan tipografi tajam | JPG/PNG |
+| `flux-dev` | Gambar fotorealistik | JPG/PNG |
+| `flux-dev-lora` | Gambar dengan LoRA kustom | JPG/PNG |
+| `p-video-2-pro` | Video flagship + audio bawaan | MP4 |
+| `p-video-2` | Video fleksibel 1–20 detik | MP4 |
+| `p-video-edit` | Video-to-video editing | MP4 |
+
+---
+
+## 🛠️ CLI Usage (Backend Tools)
+
+### Generasi Gambar
+```bash
+# p-image-ideogram
+python -m backend.pruna_client image \
   --model p-image-ideogram \
-  --prompt "4-Panel Raw Character Sheet of Indonesian barista, white background" \
+  --prompt "4-Panel Raw Character Sheet, Indonesian barista, white background" \
   --aspect-ratio 9:16 \
-  --output assets/charsheet.jpg
+  --output backend/outputs/charsheet.jpg
 
-# Menggunakan flux-dev (Photorealistic):
-python pruna_client.py image \
+# flux-dev
+python -m backend.pruna_client image \
   --model flux-dev \
-  --prompt "Hyper-realistic Jakarta night street food stall, smartphone CMOS 24mm f/1.7" \
+  --prompt "Hyper-realistic Jakarta street food stall, smartphone 24mm f/1.7" \
   --aspect-ratio 9:16 \
-  --output assets/street_stall.jpg
+  --output backend/outputs/street.jpg
 ```
 
-### 3. Generasi Video (Turn 6):
+### Generasi Video
 ```bash
-# Menggunakan p-video-2-pro (Flagship Video + Audio Bawaan):
-python pruna_client.py video \
+# p-video-2-pro
+python -m backend.pruna_client video \
   --model p-video-2-pro \
-  --prompt "Handheld smartphone footage of a street vendor laughing and pouring iced tea. Natural 9Hz micro-shake." \
-  --image assets/charsheet.jpg \
+  --prompt "Handheld smartphone footage of street vendor, 9Hz micro-shake" \
+  --image backend/outputs/charsheet.jpg \
   --duration 5 \
   --resolution 768p \
-  --aspect-ratio 9:16 \
-  --output outputs/clip_01.mp4
-
-# Menggunakan p-video-2 (Kondisi Audio Eksternal):
-python pruna_client.py video \
-  --model p-video-2 \
-  --prompt "Young woman talking excitedly to the camera in bedroom" \
-  --audio voiceovers/narration.mp3 \
-  --resolution 1080p \
-  --aspect-ratio 9:16 \
-  --output outputs/clip_02.mp4
+  --output backend/outputs/clip_01.mp4
 ```
 
-### 4. Video Editing:
+### Audit Prompt
 ```bash
-python pruna_client.py edit-video \
-  --video outputs/raw.mp4 \
-  --prompt "Change background into a bustling modern cafe" \
-  --output outputs/edited.mp4
+python -m backend.prompt_auditor "your prompt here" --duration 15 --mode 2
 ```
 
-### 5. Audit Prompt Otomatis:
-```bash
-python prompt_auditor.py <prompt_file.txt | "prompt string"> [--duration 15] [--mode 2|3] [--json]
-```
+---
+
+## 🌐 Deploy (Vercel)
+
+Frontend di-deploy otomatis ke Vercel dari folder `frontend/`.
+
+Set environment variable di Vercel dashboard:
+- (Tidak ada env khusus untuk frontend — API key hanya digunakan di backend)
+
+---
+
+## 📄 License
+
+Private project. All rights reserved.

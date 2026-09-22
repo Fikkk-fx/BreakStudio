@@ -7,17 +7,12 @@ import datetime
 from typing import Optional, List, Dict, Any
 import logging
 
+
 from .config import settings
 from . import database as db
 from .schemas import ImageGenerateRequest, VideoGenerateRequest, VideoEditRequest
+from .pruna_client import PrunaClient
 
-# Add parent dir to sys.path to import pruna_client
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-try:
-    from pruna_client import PrunaClient
-except ImportError as e:
-    logging.error(f"Could not import PrunaClient: {e}")
-    PrunaClient = None
 
 logger = logging.getLogger(__name__)
 

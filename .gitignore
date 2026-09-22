@@ -1,25 +1,58 @@
-# Environment
+# ==========================================
+# Environment Variables
+# ==========================================
 .env
 .env.local
 .env.*.local
 
-# Dependencies
-node_modules/
-frontend/node_modules/
-backend/node_modules/
-
-# Build output
-dist/
-frontend/dist/
-build/
-
+# ==========================================
 # Python
+# ==========================================
 __pycache__/
 *.py[cod]
 *.pyo
+*.pyd
 .venv/
 venv/
+env/
+*.egg-info/
+.pytest_cache/
 
-# Misc
+# ==========================================
+# Database
+# ==========================================
+*.db
+*.sqlite
+*.sqlite3
+
+# ==========================================
+# Node / Frontend
+# ==========================================
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+frontend/.vite/
+*.local
+
+# ==========================================
+# Backend Runtime Folders
+# ==========================================
+backend/uploads/
+backend/outputs/
+backend/test_results/
+
+# ==========================================
+# Agent / Dev Scratch Files
+# ==========================================
+SKILL.md
+scratch/
+
+# ==========================================
+# OS / Editor
+# ==========================================
 .DS_Store
+Thumbs.db
 *.log
+.vscode/
+.idea/
